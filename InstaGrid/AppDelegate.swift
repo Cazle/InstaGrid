@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  InstaGrid
-//
-//  Created by Kyllian GUILLOT on 24/05/2023.
-//
-
 import UIKit
 
 @main

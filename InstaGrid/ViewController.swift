@@ -6,6 +6,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var middleSelected: UIImageView!
     @IBOutlet weak var rightSelected: UIImageView!
     
+    @IBOutlet weak var bottomRectangle: UIView!
+    @IBOutlet weak var topRectangle: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultSelectedButton()
@@ -23,14 +27,20 @@ class ViewController: UIViewController {
             leftSelected.isHidden = false
             middleSelected.isHidden = true
             rightSelected.isHidden = true
+            bottomRectangle.isHidden = true
+            topRectangle.isHidden = false
         case .middle:
             leftSelected.isHidden = true
             middleSelected.isHidden = false
             rightSelected.isHidden = true
+            bottomRectangle.isHidden = false
+            topRectangle.isHidden = true
         case .right:
             leftSelected.isHidden = true
             middleSelected.isHidden = true
             rightSelected.isHidden = false
+            bottomRectangle.isHidden = true
+            topRectangle.isHidden = true
         }
     }
     
