@@ -13,6 +13,7 @@
 		293F53D62A1DFF5E00ABB104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293F53D42A1DFF5E00ABB104 /* Main.storyboard */; };
 		293F53D82A1DFF6000ABB104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 293F53D72A1DFF6000ABB104 /* Assets.xcassets */; };
 		293F53DB2A1DFF6000ABB104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 293F53D92A1DFF6000ABB104 /* LaunchScreen.storyboard */; };
+		29B46D792A307AF100C30379 /* Delm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29B46D782A307AF000C30379 /* Delm-Medium.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		293F53D72A1DFF6000ABB104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		293F53DA2A1DFF6000ABB104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		293F53DC2A1DFF6000ABB104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29B46D782A307AF000C30379 /* Delm-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Delm-Medium.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				293F53D02A1DFF5E00ABB104 /* SceneDelegate.swift */,
 				293F53D22A1DFF5E00ABB104 /* ViewController.swift */,
 				293F53D42A1DFF5E00ABB104 /* Main.storyboard */,
+				29B46D782A307AF000C30379 /* Delm-Medium.otf */,
 				293F53D72A1DFF6000ABB104 /* Assets.xcassets */,
 				293F53D92A1DFF6000ABB104 /* LaunchScreen.storyboard */,
 				293F53DC2A1DFF6000ABB104 /* Info.plist */,
@@ -127,6 +130,7 @@
 			files = (
 				293F53DB2A1DFF6000ABB104 /* LaunchScreen.storyboard in Resources */,
 				293F53D82A1DFF6000ABB104 /* Assets.xcassets in Resources */,
+				29B46D792A307AF100C30379 /* Delm-Medium.otf in Resources */,
 				293F53D62A1DFF5E00ABB104 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
