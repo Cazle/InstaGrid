@@ -2,62 +2,47 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var leftSelected: UIImageView!
-    @IBOutlet weak var middleSelected: UIImageView!
-    @IBOutlet weak var rightSelected: UIImageView!
+    
+    @IBOutlet var handleButtons: [UIButton]!
     
     @IBOutlet weak var bottomRectangle: UIView!
     @IBOutlet weak var topRectangle: UIView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        defaultSelectedButton()
+        defaultButton()
+        }
+    
+    func defaultButton(){
+        let middleButton = handleButtons[1]
+        middleButton.setImage(UIImage(named: "Selected"), for: .normal)
+        bottomRectangle.isHidden = false
     }
     
-    enum Selected {
-        case left
-        case middle
-        case right
-    }
-    
-    func toggleSelected(_ selected: Selected) {
-        switch selected{
-        case .left:
-            leftSelected.isHidden = false
-            middleSelected.isHidden = true
-            rightSelected.isHidden = true
+    @IBAction func buttonIsSelected(_ sender: UIButton) {
+        let selectedTag = sender.tag
+        let imageSelected = UIImage(named: "Selected")
+        
+        for button in handleButtons{
+            if button.tag == selectedTag{
+                button.setImage(imageSelected, for: .normal)
+            } else {
+                button.setImage(nil, for: .normal)
+            }
+        }
+        switch selectedTag{
+        case 0:
             bottomRectangle.isHidden = true
             topRectangle.isHidden = false
-        case .middle:
-            leftSelected.isHidden = true
-            middleSelected.isHidden = false
-            rightSelected.isHidden = true
+        case 1:
             bottomRectangle.isHidden = false
             topRectangle.isHidden = true
-        case .right:
-            leftSelected.isHidden = true
-            middleSelected.isHidden = true
-            rightSelected.isHidden = false
+        case 2:
             bottomRectangle.isHidden = true
             topRectangle.isHidden = true
+        default:
+            break
         }
-    }
-    
-    func defaultSelectedButton() {
-        toggleSelected(.middle)
-    }
-    
-    @IBAction func handleLeftButton(_ sender: Any) {
-        toggleSelected(.left)
-    }
-    
-    @IBAction func handleMiddleButton(_ sender: Any) {
-        toggleSelected(.middle)
-    }
-    
-    @IBAction func handleRightButton(_ sender: Any) {
-        toggleSelected(.right)
     }
 }
 
