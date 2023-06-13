@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,17 +13,21 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="InstaGrid" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSX-3h-ZMt" userLabel="PictureHandler">
-                                <rect key="frame" x="45" y="272" width="300" height="300"/>
+                                <rect key="frame" x="46.666666666666657" y="276" width="299.66666666666674" height="300"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDf-ND-fFi" userLabel="topLeft">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDf-ND-fFi" userLabel="topLeft" customClass="UIButton">
                                         <rect key="frame" x="12" y="14" width="130" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="afb-Zd-VcG">
                                                 <rect key="frame" x="45" y="45" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bSi-il-WdJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -31,12 +35,19 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="3ZZ-kz-EaP"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="testTapImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="3UC-hf-ueB"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mT4-4M-Mhw" userLabel="topRight">
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mT4-4M-Mhw" userLabel="topRight" customClass="UIButton">
                                         <rect key="frame" x="158" y="14" width="130" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="PeR-f2-eLt">
-                                                <rect key="frame" x="44" y="45" width="40" height="40"/>
+                                                <rect key="frame" x="43.333333333333343" y="45" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1M8-i6-Ezz">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -45,12 +56,19 @@
                                             <constraint firstAttribute="width" constant="130" id="5Y8-pH-Hjt"/>
                                             <constraint firstAttribute="height" constant="130" id="zJe-Nh-aQ2"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="testTapImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b0N-rI-gQ3"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Dg-dZ-b2J" userLabel="bottomRight">
+                                    <view tag="2" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Dg-dZ-b2J" userLabel="bottomRight" customClass="UIButton">
                                         <rect key="frame" x="158" y="158" width="130" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="2SI-tI-L1A">
                                                 <rect key="frame" x="44" y="45" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PUP-vf-vLF">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -59,12 +77,19 @@
                                             <constraint firstAttribute="height" constant="130" id="1Ec-o0-ZQH"/>
                                             <constraint firstAttribute="width" constant="130" id="MDn-oD-JMV"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="testTapImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fva-4g-qpv"/>
+                                        </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tc-iA-he5" userLabel="bottomLeft">
+                                    <view tag="3" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3tc-iA-he5" userLabel="bottomLeft" customClass="UIButton">
                                         <rect key="frame" x="12" y="158" width="130" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="pO0-vj-mN7">
                                                 <rect key="frame" x="45" y="45" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nZX-Z1-2Et">
+                                                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -72,12 +97,19 @@
                                         <constraints>
                                             <constraint firstAttribute="width" constant="130" id="4Yk-dP-iwG"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="testTapImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rd5-Fx-gAh"/>
+                                        </connections>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDK-0B-xEF" userLabel="bottomRectangle">
+                                    <view hidden="YES" tag="4" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dDK-0B-xEF" userLabel="bottomRectangle" customClass="UIButton">
                                         <rect key="frame" x="12" y="158" width="276" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="rgj-od-kEz">
-                                                <rect key="frame" x="118" y="45" width="40" height="40"/>
+                                                <rect key="frame" x="117.33333333333334" y="45" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHv-sU-14E">
+                                                <rect key="frame" x="0.0" y="0.0" width="276" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -86,12 +118,19 @@
                                             <constraint firstAttribute="width" constant="276" id="Rgp-Cx-4xp"/>
                                             <constraint firstAttribute="height" constant="130" id="rIL-pk-rjX"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="testTapImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JpH-JR-olr"/>
+                                        </connections>
                                     </view>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hok-oP-kH3" userLabel="topRectangle">
+                                    <view hidden="YES" tag="5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hok-oP-kH3" userLabel="topRectangle" customClass="UIButton">
                                         <rect key="frame" x="12" y="14" width="276" height="130"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="Plus" translatesAutoresizingMaskIntoConstraints="NO" id="rsc-Qi-1Qk">
-                                                <rect key="frame" x="118" y="45" width="40" height="40"/>
+                                                <rect key="frame" x="117.33333333333334" y="45" width="40" height="40"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBw-Jf-Uik">
+                                                <rect key="frame" x="0.0" y="0.0" width="276" height="130"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             </imageView>
                                         </subviews>
@@ -102,6 +141,9 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="276" id="at7-Ot-dWc"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="qil-PI-dqm"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="testTapImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ww4-Wj-12q"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18039217590000001" green="0.39607840779999998" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -133,14 +175,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Instagrid" translatesAutoresizingMaskIntoConstraints="NO" id="mff-EI-H6w">
-                                <rect key="frame" x="120" y="47" width="150" height="50"/>
+                                <rect key="frame" x="121.66666666666669" y="59" width="150" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="GJ3-dd-8QE"/>
                                     <constraint firstAttribute="width" constant="150" id="zdf-qt-q3t"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="krU-MK-pP4" userLabel="handleButtons">
-                                <rect key="frame" x="45" y="715" width="300" height="80"/>
+                                <rect key="frame" x="46.666666666666657" y="723" width="300" height="80"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gr-cK-6rh">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
@@ -190,17 +232,17 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H75-zq-X4y">
-                                <rect key="frame" x="106" y="213.33333333333334" width="178" height="50.666666666666657"/>
+                                <rect key="frame" x="107.66666666666667" y="217.33333333333334" width="177.66666666666663" height="50.666666666666657"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-65-p20">
-                                        <rect key="frame" x="79" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="78.999999999999986" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="3YG-VC-KJb"/>
                                             <constraint firstAttribute="width" constant="20" id="d73-9T-MdX"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipe up to share" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoD-dw-HAw">
-                                        <rect key="frame" x="0.0" y="25" width="178" height="25.666666666666671"/>
+                                        <rect key="frame" x="0.0" y="25" width="177.66666666666666" height="25.666666666666671"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="177.66999999999999" id="Cta-Sy-df3"/>
                                             <constraint firstAttribute="height" constant="25.670000000000002" id="iTx-jk-sUe"/>
@@ -234,11 +276,17 @@
                         <outletCollection property="handleButtons" destination="3gr-cK-6rh" collectionClass="NSMutableArray" id="GLs-Yb-DQH"/>
                         <outletCollection property="handleButtons" destination="dq2-08-R7m" collectionClass="NSMutableArray" id="1F2-GF-aVT"/>
                         <outletCollection property="handleButtons" destination="GYQ-nn-rJi" collectionClass="NSMutableArray" id="qru-fO-TUb"/>
+                        <outletCollection property="allPictures" destination="bSi-il-WdJ" collectionClass="NSMutableArray" id="7KN-6p-rUa"/>
+                        <outletCollection property="allPictures" destination="1M8-i6-Ezz" collectionClass="NSMutableArray" id="ySe-Rj-NGc"/>
+                        <outletCollection property="allPictures" destination="PUP-vf-vLF" collectionClass="NSMutableArray" id="0UO-pm-KGL"/>
+                        <outletCollection property="allPictures" destination="nZX-Z1-2Et" collectionClass="NSMutableArray" id="ozN-RI-7O2"/>
+                        <outletCollection property="allPictures" destination="eHv-sU-14E" collectionClass="NSMutableArray" id="VVs-fE-YK4"/>
+                        <outletCollection property="allPictures" destination="aBw-Jf-Uik" collectionClass="NSMutableArray" id="x39-hb-jxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="64.615384615384613" y="-2.1327014218009479"/>
+            <point key="canvasLocation" x="63.358778625954194" y="-2.8169014084507045"/>
         </scene>
     </scenes>
     <resources>
