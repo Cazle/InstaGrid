@@ -272,6 +272,7 @@
                     </view>
                     <connections>
                         <outlet property="bottomRectangle" destination="dDK-0B-xEF" id="7L8-Sy-XTG"/>
+                        <outlet property="handleSwipe" destination="aSX-3h-ZMt" id="xCM-wG-YJ9"/>
                         <outlet property="topRectangle" destination="Hok-oP-kH3" id="JXV-lU-mne"/>
                         <outletCollection property="handleButtons" destination="3gr-cK-6rh" collectionClass="NSMutableArray" id="GLs-Yb-DQH"/>
                         <outletCollection property="handleButtons" destination="dq2-08-R7m" collectionClass="NSMutableArray" id="1F2-GF-aVT"/>
