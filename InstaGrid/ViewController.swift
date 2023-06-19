@@ -32,6 +32,7 @@ class ViewController: UIViewController {
         swipeUp.addTarget(self, action: #selector(swipe(sender:)))
         swipeLeft.addTarget(self, action: #selector(swipe(sender:)))
     }
+    
     @objc func swipe(sender: UISwipeGestureRecognizer){
         
         switch sender.direction{
