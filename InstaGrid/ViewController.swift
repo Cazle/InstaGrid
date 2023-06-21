@@ -26,7 +26,7 @@ class ViewController: UIViewController {
         addingGesture()
     }
     
-    func addingGesture(){
+    func addingGesture() {
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
         swipeUp.direction = .up
@@ -39,23 +39,24 @@ class ViewController: UIViewController {
         print(swipeLeft)
     }
     
-    
     @objc func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
-        if UIDevice.current.orientation.isPortrait && sender.direction == .up {
+        print("Je suis activé")
+        print(UIDevice.current.orientation.isPortrait)
+        if sender.direction == .up {
             print(sender.direction)
             swipingUp()
-        } else if UIDevice.current.orientation.isLandscape && sender.direction == .left {
+        } else {
             print(sender.direction)
             swipingLeft()
         }
     }
-    func swipingUp(){
+    
+    func swipingUp() {
         print("Je suis en haut")
     }
-    func swipingLeft(){
+    func swipingLeft() {
         print("Je suis à gauche")
     }
-    
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isPortrait {
@@ -77,15 +78,15 @@ class ViewController: UIViewController {
         let selectedTag = sender.tag
         let imageSelected = UIImage(named: "Selected")
         
-        for button in handleButtons{
-            if button.tag == selectedTag{
+        for button in handleButtons {
+            if button.tag == selectedTag {
                 button.setImage(imageSelected, for: .normal)
                 resetPicturesWhenChangingLayout()
             } else {
                 button.setImage(nil, for: .normal)
             }
         }
-        switch selectedTag{
+        switch selectedTag {
         case 0:
             bottomRectangle.isHidden = true
             topRectangle.isHidden = false
