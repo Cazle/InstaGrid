@@ -27,19 +27,25 @@ class ViewController: UIViewController {
     }
     
     func addingGesture(){
+        
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
         swipeUp.direction = .up
         handleSwipe.addGestureRecognizer(swipeUp)
+        print(swipeUp)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
         swipeLeft.direction = .left
-        handleSwipe.addGestureRecognizer(swipeLeft)    }
+        handleSwipe.addGestureRecognizer(swipeLeft)
+        print(swipeLeft)
+    }
     
     
     @objc func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
         if UIDevice.current.orientation.isPortrait && sender.direction == .up {
+            print(sender.direction)
             swipingUp()
         } else if UIDevice.current.orientation.isLandscape && sender.direction == .left {
+            print(sender.direction)
             swipingLeft()
         }
     }
@@ -52,7 +58,7 @@ class ViewController: UIViewController {
     
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        if UIDevice.current.orientation.isPortrait{
+        if UIDevice.current.orientation.isPortrait {
             arrowImage.image = UIImage(named: "Arrow Up")
             swipeLabel.text = "Swipe up to share"
         } else {
@@ -94,7 +100,7 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction func testTapImage(_ sender: UIButton) {
+    @IBAction func TapImage(_ sender: UIButton) {
         selectedButton = sender
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
