@@ -11,6 +11,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomRectangle: UIView!
     @IBOutlet weak var topRectangle: UIView!
     
+    
+    @IBOutlet weak var arrowImage: UIImageView!
+    @IBOutlet weak var swipeLabel: UILabel!
+    
     // Used for our pictures, to have a tag for both pictures and buttons pictures
     var selectedButton: UIButton?
     
@@ -19,29 +23,41 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaultButton()
-        
-        let swipeUp = UISwipeGestureRecognizer()
-        let swipeLeft = UISwipeGestureRecognizer()
-        
-        swipeLeft.direction = .left
-        swipeUp.direction = .up
-        
-        handleSwipe.addGestureRecognizer(swipeUp)
-        handleSwipe.addGestureRecognizer(swipeLeft)
-        
-        swipeUp.addTarget(self, action: #selector(swipe(sender:)))
-        swipeLeft.addTarget(self, action: #selector(swipe(sender:)))
+        addingGesture()
     }
     
-    @objc func swipe(sender: UISwipeGestureRecognizer){
+    func addingGesture(){
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+        swipeUp.direction = .up
+        handleSwipe.addGestureRecognizer(swipeUp)
         
-        switch sender.direction{
-        case .up:
-                print("Je suis en haut")
-        case .left:
-                print("Je suis à gauche")
-        default :
-            print("Not valid")
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
+        swipeLeft.direction = .left
+        handleSwipe.addGestureRecognizer(swipeLeft)    }
+    
+    
+    @objc func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
+        if UIDevice.current.orientation.isPortrait && sender.direction == .up {
+            swipingUp()
+        } else if UIDevice.current.orientation.isLandscape && sender.direction == .left {
+            swipingLeft()
+        }
+    }
+    func swipingUp(){
+        print("Je suis en haut")
+    }
+    func swipingLeft(){
+        print("Je suis à gauche")
+    }
+    
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        if UIDevice.current.orientation.isPortrait{
+            arrowImage.image = UIImage(named: "Arrow Up")
+            swipeLabel.text = "Swipe up to share"
+        } else {
+            arrowImage.image = UIImage(named: "Arrow Left")
+            swipeLabel.text = "Swipe left to share"
         }
     }
     
