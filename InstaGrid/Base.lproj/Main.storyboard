@@ -362,6 +362,16 @@
                         <outletCollection property="allPictures" destination="1M8-i6-Ezz" collectionClass="NSMutableArray" id="ySe-Rj-NGc"/>
                         <outletCollection property="allPictures" destination="nZX-Z1-2Et" collectionClass="NSMutableArray" id="ozN-RI-7O2"/>
                         <outletCollection property="allPictures" destination="PUP-vf-vLF" collectionClass="NSMutableArray" id="0UO-pm-KGL"/>
+                        <outletCollection property="firstLayout" destination="nZX-Z1-2Et" collectionClass="NSMutableArray" id="EeD-Jy-cN9"/>
+                        <outletCollection property="firstLayout" destination="PUP-vf-vLF" collectionClass="NSMutableArray" id="Ics-AY-LiB"/>
+                        <outletCollection property="firstLayout" destination="aBw-Jf-Uik" collectionClass="NSMutableArray" id="32h-ag-Tku"/>
+                        <outletCollection property="secondLayout" destination="bSi-il-WdJ" collectionClass="NSMutableArray" id="lmB-PG-Ee5"/>
+                        <outletCollection property="secondLayout" destination="1M8-i6-Ezz" collectionClass="NSMutableArray" id="NCq-ih-m1Q"/>
+                        <outletCollection property="secondLayout" destination="eHv-sU-14E" collectionClass="NSMutableArray" id="iQy-sl-9Zb"/>
+                        <outletCollection property="thirdLayout" destination="bSi-il-WdJ" collectionClass="NSMutableArray" id="aJo-IQ-phb"/>
+                        <outletCollection property="thirdLayout" destination="1M8-i6-Ezz" collectionClass="NSMutableArray" id="92O-PQ-Qjc"/>
+                        <outletCollection property="thirdLayout" destination="nZX-Z1-2Et" collectionClass="NSMutableArray" id="Yxd-QN-AeR"/>
+                        <outletCollection property="thirdLayout" destination="PUP-vf-vLF" collectionClass="NSMutableArray" id="2Ab-8Z-f3k"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

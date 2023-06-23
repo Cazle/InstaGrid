@@ -11,9 +11,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomRectangle: UIView!
     @IBOutlet weak var topRectangle: UIView!
     
-    
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var swipeLabel: UILabel!
+    
+    @IBOutlet var firstLayout: [UIImageView]!
+    @IBOutlet var secondLayout: [UIImageView]!
+    @IBOutlet var thirdLayout: [UIImageView]!
     
     // Used for our pictures, to have a tag for both pictures and buttons pictures
     var selectedButton: UIButton?
@@ -31,31 +34,67 @@ class ViewController: UIViewController {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
         swipeUp.direction = .up
         handleSwipe.addGestureRecognizer(swipeUp)
-        print(swipeUp)
         
         let swipeLeft = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
         swipeLeft.direction = .left
         handleSwipe.addGestureRecognizer(swipeLeft)
-        print(swipeLeft)
     }
     
     @objc func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
-        print("Je suis activé")
-        print(UIDevice.current.orientation.isPortrait)
-        if sender.direction == .up {
-            print(sender.direction)
+        let width = UIScreen.main.bounds.width
+        let height = UIScreen.main.bounds.height
+        
+        if width < height, sender.direction == .up {
             swipingUp()
-        } else {
-            print(sender.direction)
+        } else if width > height, sender.direction == .left {
             swipingLeft()
+        } else {
+            print("Not valid")
         }
     }
     
     func swipingUp() {
-        print("Je suis en haut")
+        if checkFirstLayout() || checkSecondLayout() || checkThirdLayout() {
+            print("Je suis en haut")
+        }
     }
     func swipingLeft() {
-        print("Je suis à gauche")
+        if checkFirstLayout() || checkSecondLayout() || checkThirdLayout() {
+            print("Je suis à gauche")
+        }
+    }
+    
+    func checkFirstLayout() -> Bool {
+        for picturesOfFirst in firstLayout {
+            if picturesOfFirst.image == nil {
+                print("First layout is not full")
+                return false
+            }
+        }
+        print("First layout is full")
+        return true
+    }
+    
+    func checkSecondLayout() -> Bool {
+        for picturesOfSecond in secondLayout {
+            if picturesOfSecond.image == nil {
+                print("Second layout is not full")
+                return false
+            }
+        }
+        print("Second layout is full")
+        return true
+    }
+    
+    func checkThirdLayout() -> Bool {
+        for picturesOfThird in thirdLayout {
+            if picturesOfThird.image == nil {
+                print("Third layout is not full")
+                return false
+            }
+        }
+        print("Third layout is full")
+        return true
     }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
