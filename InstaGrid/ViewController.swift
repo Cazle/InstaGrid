@@ -94,10 +94,9 @@ class ViewController: UIViewController {
         }
     }
     func sharingView(){
-        let image = handleSwipe
-        let imageToShare = [image]
-        
-        let activityController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+        let image = handleSwipe.asImage()
+        let imageToShare = [ image ]
+        let activityController = UIActivityViewController(activityItems: imageToShare, applicationActivities: nil)
         self.present(activityController, animated: true)
     }
     
@@ -218,7 +217,14 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true, completion: nil)
     }
 }
-
+extension UIView {
+    func asImage() -> UIImage {
+        let renderer = UIGraphicsImageRenderer(bounds: bounds)
+        return renderer.image { rendererContext in
+            self.layer.render(in: rendererContext.cgContext)
+        }
+    }
+}
 
         
 
