@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         defaultButton()
         addingGesture()
+        addingFonts()
     }
     
     func addingGesture() {
@@ -54,14 +55,50 @@ class ViewController: UIViewController {
     }
     
     func swipingUp() {
+        let height = UIScreen.main.bounds.height
         if checkFirstLayout() || checkSecondLayout() || checkThirdLayout() {
             print("Je suis en haut")
+            UIView.animate(withDuration: 1, animations: {
+                self.handleSwipe.transform = CGAffineTransform(translationX: 0, y: -height)
+            }) { (success) in
+                if success{
+                    print("Le swipe haut est réussi")
+                        self.sharingView()
+                        self.resetPicturesWhenChangingLayout()
+                    UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, animations: {
+                        self.handleSwipe.transform = CGAffineTransform(translationX: 0, y: height)
+                    })
+                        self.handleSwipe.transform = .identity
+                }
+            }
         }
     }
     func swipingLeft() {
+        let width = UIScreen.main.bounds.width
         if checkFirstLayout() || checkSecondLayout() || checkThirdLayout() {
             print("Je suis à gauche")
+            UIView.animate(withDuration: 1, animations: {
+                self.handleSwipe.transform = CGAffineTransform(translationX: -width, y: 0)
+            }) { (succes) in
+                if succes {
+                    print("Le swipe gauche est réussi")
+                    self.sharingView()
+                    self.resetPicturesWhenChangingLayout()
+                    UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, animations: {
+                        self.handleSwipe.transform = CGAffineTransform(translationX: width, y: 0)
+                    })
+                    self.handleSwipe.transform = .identity
+                }
+                
+            }
         }
+    }
+    func sharingView(){
+        let image = handleSwipe
+        let imageToShare = [image]
+        
+        let activityController = UIActivityViewController(activityItems: [imageToShare], applicationActivities: nil)
+        self.present(activityController, animated: true)
     }
     
     func checkFirstLayout() -> Bool {
@@ -101,9 +138,11 @@ class ViewController: UIViewController {
         if UIDevice.current.orientation.isPortrait {
             arrowImage.image = UIImage(named: "Arrow Up")
             swipeLabel.text = "Swipe up to share"
+            addingFonts()
         } else {
             arrowImage.image = UIImage(named: "Arrow Left")
             swipeLabel.text = "Swipe left to share"
+            addingFonts()
         }
     }
     
@@ -154,6 +193,13 @@ class ViewController: UIViewController {
             picture.image = nil
         }
     }
+    func addingFonts(){
+        if let font = UIFont(name: "Delm-Medium", size: 22){
+            swipeLabel.font = font
+        } else {
+            swipeLabel.font = UIFont.systemFont(ofSize: 22)
+        }
+    }
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -172,6 +218,9 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         picker.dismiss(animated: true, completion: nil)
     }
 }
+
+
+        
 
 
 
