@@ -232,9 +232,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gr-cK-6rh">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="BGv-FP-M9g">
-                                                <variation key="heightClass=compact" constant="80"/>
-                                            </constraint>
+                                            <constraint firstAttribute="width" constant="80" id="BGv-FP-M9g"/>
                                             <constraint firstAttribute="height" constant="80" id="C4V-Ul-UJq"/>
                                         </constraints>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -271,21 +269,17 @@
                                 <variation key="heightClass=compact" axis="vertical"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="H75-zq-X4y" userLabel="swipeUp">
-                                <rect key="frame" x="118" y="220" width="178" height="50.666666666666686"/>
+                                <rect key="frame" x="118.33333333333333" y="220" width="177.66666666666669" height="50.666666666666686"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="Arrow Up" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-65-p20">
-                                        <rect key="frame" x="79" y="0.0" width="20" height="20"/>
+                                        <rect key="frame" x="78.666666666666671" y="0.0" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="3YG-VC-KJb"/>
                                             <constraint firstAttribute="width" constant="20" id="d73-9T-MdX"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OoD-dw-HAw">
-                                        <rect key="frame" x="0.0" y="25" width="178" height="25.666666666666671"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="177.66999999999999" id="Cta-Sy-df3"/>
-                                            <constraint firstAttribute="height" constant="25.670000000000002" id="iTx-jk-sUe"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="25" width="177.66666666666666" height="25.666666666666671"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Swipe up to share">
                                                 <attributes>
@@ -296,6 +290,17 @@
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <variation key="heightClass=compact">
+                                            <attributedString key="attributedText">
+                                                <fragment content="Swipe up to share">
+                                                    <attributes>
+                                                        <color key="NSColor" systemColor="systemBackgroundColor"/>
+                                                        <font key="NSFont" size="18" name="Delm-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </variation>
                                     </label>
                                 </subviews>
                             </stackView>
@@ -305,14 +310,14 @@
                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="krU-MK-pP4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2Pv-tb-oTd"/>
-                            <constraint firstItem="aSX-3h-ZMt" firstAttribute="top" secondItem="H75-zq-X4y" secondAttribute="bottom" constant="8" id="2q0-4S-ubn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="krU-MK-pP4" secondAttribute="trailing" constant="10" id="9aw-1V-pAg"/>
                             <constraint firstItem="aSX-3h-ZMt" firstAttribute="top" secondItem="mff-EI-H6w" secondAttribute="bottom" constant="10" id="CTj-uM-cVe"/>
-                            <constraint firstItem="H75-zq-X4y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GGK-xH-26l"/>
                             <constraint firstItem="mff-EI-H6w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GH7-ua-6wj"/>
+                            <constraint firstItem="H75-zq-X4y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="QUG-xE-IzO"/>
                             <constraint firstAttribute="bottom" secondItem="aSX-3h-ZMt" secondAttribute="bottom" constant="30" id="Trf-aE-CSL"/>
-                            <constraint firstItem="H75-zq-X4y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="WFK-qK-c5a"/>
-                            <constraint firstItem="aSX-3h-ZMt" firstAttribute="leading" secondItem="H75-zq-X4y" secondAttribute="trailing" id="XDN-6S-gYt"/>
+                            <constraint firstItem="H75-zq-X4y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="YF2-D4-gsE"/>
+                            <constraint firstItem="aSX-3h-ZMt" firstAttribute="leading" secondItem="H75-zq-X4y" secondAttribute="trailing" constant="8" id="cek-OH-rKP"/>
+                            <constraint firstItem="aSX-3h-ZMt" firstAttribute="top" secondItem="H75-zq-X4y" secondAttribute="bottom" constant="8" id="fkf-Ik-kOG"/>
                             <constraint firstItem="aSX-3h-ZMt" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="hTf-Jx-EWi"/>
                             <constraint firstItem="aSX-3h-ZMt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mSi-zk-EFk"/>
                             <constraint firstItem="mff-EI-H6w" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="q1n-iZ-SvC">
@@ -326,10 +331,10 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="9aw-1V-pAg"/>
-                                <exclude reference="WFK-qK-c5a"/>
+                                <exclude reference="YF2-D4-gsE"/>
                                 <exclude reference="CTj-uM-cVe"/>
                                 <exclude reference="Trf-aE-CSL"/>
-                                <exclude reference="XDN-6S-gYt"/>
+                                <exclude reference="cek-OH-rKP"/>
                                 <exclude reference="2Pv-tb-oTd"/>
                             </mask>
                         </variation>
@@ -338,12 +343,12 @@
                                 <include reference="9aw-1V-pAg"/>
                                 <exclude reference="sYm-Jo-Ivn"/>
                                 <exclude reference="yZl-gN-YCO"/>
-                                <exclude reference="GGK-xH-26l"/>
-                                <include reference="WFK-qK-c5a"/>
-                                <exclude reference="2q0-4S-ubn"/>
+                                <exclude reference="QUG-xE-IzO"/>
+                                <include reference="YF2-D4-gsE"/>
                                 <include reference="CTj-uM-cVe"/>
                                 <include reference="Trf-aE-CSL"/>
-                                <include reference="XDN-6S-gYt"/>
+                                <include reference="cek-OH-rKP"/>
+                                <exclude reference="fkf-Ik-kOG"/>
                                 <exclude reference="hTf-Jx-EWi"/>
                                 <exclude reference="tHS-Cp-y44"/>
                                 <include reference="2Pv-tb-oTd"/>

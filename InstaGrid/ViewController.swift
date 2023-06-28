@@ -11,9 +11,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var bottomRectangle: UIView!
     @IBOutlet weak var topRectangle: UIView!
     
+    //They are used to change the image and the text depending on if the phone is on landscape or portrait
     @IBOutlet weak var arrowImage: UIImageView!
     @IBOutlet weak var swipeLabel: UILabel!
     
+    //Used to make a security and check if all the images are there before swiping
     @IBOutlet var firstLayout: [UIImageView]!
     @IBOutlet var secondLayout: [UIImageView]!
     @IBOutlet var thirdLayout: [UIImageView]!
@@ -48,23 +50,19 @@ class ViewController: UIViewController {
             swipingUp()
         } else if width > height, sender.direction == .left {
             swipingLeft()
-        } else {
-            print("Not valid")
         }
     }
     
     func swipingUp() {
         let height = UIScreen.main.bounds.height
-        if checkFirstLayout() || checkSecondLayout() || checkThirdLayout() {
-            print("Je suis en haut")
+        if checkLayout(layout: firstLayout) || checkLayout(layout: secondLayout) || checkLayout(layout: thirdLayout) {
             UIView.animate(withDuration: 1, animations: {
                 self.handleSwipe.transform = CGAffineTransform(translationX: 0, y: -height)
             }) { (success) in
                 if success{
-                    print("Le swipe haut est réussi")
                         self.sharingView()
                         self.resetPicturesWhenChangingLayout()
-                    UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, animations: {
+                    UIView.animate(withDuration: 0.9, animations: {
                         self.handleSwipe.transform = CGAffineTransform(translationX: 0, y: height)
                     })
                         self.handleSwipe.transform = .identity
@@ -74,16 +72,14 @@ class ViewController: UIViewController {
     }
     func swipingLeft() {
         let width = UIScreen.main.bounds.width
-        if checkFirstLayout() || checkSecondLayout() || checkThirdLayout() {
-            print("Je suis à gauche")
+        if checkLayout(layout: firstLayout) || checkLayout(layout: secondLayout) || checkLayout(layout: thirdLayout) {
             UIView.animate(withDuration: 1, animations: {
                 self.handleSwipe.transform = CGAffineTransform(translationX: -width, y: 0)
             }) { (succes) in
                 if succes {
-                    print("Le swipe gauche est réussi")
                     self.sharingView()
                     self.resetPicturesWhenChangingLayout()
-                    UIView.animate(withDuration: 0.9, delay: 0.1, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.4, animations: {
+                    UIView.animate(withDuration: 0.9, animations: {
                         self.handleSwipe.transform = CGAffineTransform(translationX: width, y: 0)
                     })
                     self.handleSwipe.transform = .identity
@@ -99,38 +95,15 @@ class ViewController: UIViewController {
         self.present(activityController, animated: true, completion: nil)
     }
     
-    func checkFirstLayout() -> Bool {
-        for picturesOfFirst in firstLayout {
+    func checkLayout(layout: [UIImageView]) -> Bool {
+        for picturesOfFirst in layout {
             if picturesOfFirst.image == nil {
-                print("First layout is not full")
                 return false
             }
         }
-        print("First layout is full")
         return true
     }
     
-    func checkSecondLayout() -> Bool {
-        for picturesOfSecond in secondLayout {
-            if picturesOfSecond.image == nil {
-                print("Second layout is not full")
-                return false
-            }
-        }
-        print("Second layout is full")
-        return true
-    }
-    
-    func checkThirdLayout() -> Bool {
-        for picturesOfThird in thirdLayout {
-            if picturesOfThird.image == nil {
-                print("Third layout is not full")
-                return false
-            }
-        }
-        print("Third layout is full")
-        return true
-    }
     
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         if UIDevice.current.orientation.isPortrait {
