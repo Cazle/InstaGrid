@@ -20,8 +20,8 @@ class ViewController: UIViewController {
     @IBOutlet var secondLayout: [UIImageView]!
     @IBOutlet var thirdLayout: [UIImageView]!
     
-    // Used for our pictures, to have a tag for both pictures and buttons pictures
-    var selectedButton: UIButton?
+    // Used for our pictures, it will be used for the tag
+    var selectedPicture: UIButton?
     
     // The main view with all the pictures, it is used to make the swipe
     @IBOutlet weak var handleSwipe: UIView!
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func TapImage(_ sender: UIButton) {
-        selectedButton = sender
+        selectedPicture = sender
         let vc = UIImagePickerController()
         vc.sourceType = .photoLibrary
         vc.delegate = self
@@ -167,7 +167,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             for picture in allPictures {
-                if picture.tag == selectedButton?.tag {
+                if picture.tag == selectedPicture?.tag {
                     picture.image = image
                 }
             }
