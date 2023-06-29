@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     // Used for our pictures, to have a tag for both pictures and buttons pictures
     var selectedButton: UIButton?
     
+    // The main view with all the pictures, it is used to make the swipe
     @IBOutlet weak var handleSwipe: UIView!
     
     override func viewDidLoad() {
@@ -32,7 +33,6 @@ class ViewController: UIViewController {
     }
     
     func addingGesture() {
-        
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture(_:)))
         swipeUp.direction = .up
         handleSwipe.addGestureRecognizer(swipeUp)
@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     @objc func handleSwipeGesture(_ sender: UISwipeGestureRecognizer) {
         let width = UIScreen.main.bounds.width
         let height = UIScreen.main.bounds.height
-        
         if width < height, sender.direction == .up {
             swipingUp()
         } else if width > height, sender.direction == .left {
@@ -84,7 +83,6 @@ class ViewController: UIViewController {
                     })
                     self.handleSwipe.transform = .identity
                 }
-                
             }
         }
     }
